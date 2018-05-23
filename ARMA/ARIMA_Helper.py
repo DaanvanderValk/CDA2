@@ -74,17 +74,20 @@ def evaluate_arima_model(X, arima_order):
 	return error
 
 def evaluate_models(dataset, p_values, d_values, q_values):
-	dataset = dataset.astype('float32')
-	best_score, best_cfg = float("inf"), None
-	for p in p_values:
-		for d in d_values:
-			for q in q_values:
-				order = (p,d,q)
-				try:
-					mse = evaluate_arima_model(dataset, order)
-					if mse < best_score:
-						best_score, best_cfg = mse, order
-					print('ARIMA%s MSE=%.3f' % (order,mse))
-				except:
-					continue
-	print('Best ARIMA%s MSE=%.3f' % (best_cfg, best_score))
+    dataset = dataset.astype('float32')
+    best_score, best_cfg = float("inf"), None
+    for p in p_values:
+        for d in d_values:
+            for q in q_values:
+                order = (p,d,q)
+                try:
+                    mse = evaluate_arima_model(dataset, order)
+                    print ("mse value is ",mse)
+                    if mse < best_score:
+                        print ('Found a better score')
+                        print (p,q,d)
+                        best_score, best_cfg = mse, order
+                        print('ARIMA%s MSE=%.3f' % (order,mse))
+                except Exception as e: 
+                    print(e)
+    print('Best ARIMA%s MSE=%.3f' % (best_cfg, best_score))
