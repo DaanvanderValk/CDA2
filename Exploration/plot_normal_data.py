@@ -45,7 +45,7 @@ if __name__ == "__main__":
     df['time'] = df['DATETIME']
     df['Level of tank 1 (meters)'] = df['L_T1']
     df['Status of pump 1 (ON/OFF) x 135'] = df['S_PU1'] * 135
-    df['Flow in pump 1 (LPS)'] = df['F_PU2']
+    df['Flow in pump 1 (LPS)'] = df['F_PU1']
     df['Status of pump 2 (ON/OFF) x 130'] = df['S_PU2'] * 130
     df['Flow in pump 2 (LPS)'] = df['F_PU2']
     df['Status of pump 3 (ON/OFF) x 125'] = df['S_PU3'] * 125
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     df['Pressure in junction 269 (meters)'] = df['P_J269']
     
     df_cluster_pu1_2_3 = df[['time', 'Level of tank 1 (meters)', 'Status of pump 1 (ON/OFF) x 135', 'Flow in pump 1 (LPS)', 'Status of pump 2 (ON/OFF) x 130', 'Flow in pump 2 (LPS)', 'Status of pump 3 (ON/OFF) x 125', 'Flow in pump 3 (LPS)', 'Pressure in junction 280 (meters)', 'Pressure in junction 269 (meters)']]
-    df_cluster_pu1_2_3.plot(x="time", figsize=figure_size, title='Cluster near pump 1, 2, 3 in the first half of May 2014').legend(bbox_to_anchor=(1.00, 0.8))
+    df_cluster_pu1_2_3.plot(x="time", figsize=figure_size, title='Cluster near pump 1, 2, 3 in the first half of May 2014').legend(bbox_to_anchor=(0.85, 0.85))
     
     plt.savefig("cyclic_behavior.svg", bbox_inches='tight')
     
