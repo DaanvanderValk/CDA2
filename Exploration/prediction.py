@@ -30,8 +30,8 @@ if __name__ == "__main__":
     figure_size = (11, 6)
     
     # This is only data exploration; we will only look into one feature (L_T1) and the first 100 entries
-    series = series.head(200)
-    series.plot(figsize=figure_size)
+    series = series.head(30)
+#    series.plot(figsize=figure_size)
     
 #    # Tail-rolling average transform
 #    rolling = series.rolling(window=3)
@@ -43,36 +43,48 @@ if __name__ == "__main__":
 #    pyplot.show()
     
     
-    sq_errors = list()
-    # prepare situation
-    X = series.values
-    window = 3
-    history = [X[i] for i in range(window)]
-    test = [X[i] for i in range(window, len(X))]
-    predictions = list()
-    # walk forward over time steps in test
-    for t in range(len(test)):
-    	length = len(history)
-    	yhat = mean([history[i] for i in range(length-window,length)])
-    	obs = test[t]
-    	predictions.append(yhat)
-    	history.append(obs)
-    	sq_error = np.square(obs-yhat)
-    	#print('predicted=%f, expected=%f, error=%f' % (yhat, obs, sq_error))
-    	sq_errors.append(sq_error)
-    error = mean_squared_error(test, predictions)
-    print('Test MSE: %.3f' % error)
-    error = np.mean(sq_errors)
-    print('Test MSE (my computation): %.3f' % error)
+    # TODO: try different window sizes
+    window_sizes = [2, 3, 4, 5, 6]
+    sq_errors = {}
+    predictions = {}
+    
+    for window in window_sizes:
+        sq_errors[window] = list()
+        X = series.values
+        history = [X[i] for i in range(window)]
+        test = [X[i] for i in range(window, len(X))]
+        predictions[window] = list()
+        # walk forward over time steps in test
+        for t in range(len(test)):
+        	length = len(history)
+        	yhat = mean([history[i] for i in range(length-window,length)])
+        	obs = test[t]
+        	predictions[window].append(yhat)
+        	history.append(obs)
+        	sq_error = np.square(obs-yhat)
+        	#print('predicted=%f, expected=%f, error=%f' % (yhat, obs, sq_error))
+        	sq_errors[window].append(sq_error)
+        error = mean_squared_error(test, predictions[window])
+        print('Window size:', window)
+        print('Test MSE: %.3f' % error)
+        error = np.mean(sq_errors[window])
+        print('Test MSE (my computation): %.3f' % error)
+        
     # plot
+    
     pyplot.figure(figsize=figure_size).suptitle('Data and predictions')
-    pyplot.plot(series[3:].index, test)
-    pyplot.plot(series[3:].index, predictions, color='orange', label='prediction (window size=3)')
+    for window in window_sizes:
+        pyplot.plot(series[window:].index, predictions[window], label='prediction (window size=%d)' % window)
+        
+    pyplot.plot(series[:].index, X, label='Original data', linewidth=3)
     pyplot.legend()
     pyplot.show()
     
     pyplot.figure(figsize=figure_size).suptitle('Squared error of prediction')
-    pyplot.plot(series[3:].index, sq_errors, color='red')
+    for window in window_sizes:
+        pyplot.plot(series[window:].index, sq_errors[window], label='Squared error (window size=%d)' % window)
+    #pyplot.plot(series[window:].index, sq_errors[window], color='red')
+    pyplot.legend()
     pyplot.show()
     
 #    # Autocorrelation plot: good way to determine window size!
