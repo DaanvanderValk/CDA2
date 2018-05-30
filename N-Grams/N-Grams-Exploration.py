@@ -61,12 +61,12 @@ for i in range(0,len(cut_data)-5):
 #    d = cut_data[i+3]
 #    e = cut_data[i+4]
     #if (occurrences_train_prob[a][b][c][d][e] < 0.0002):
-    if (occurrences_train_prob[a][b][c] < 0.0005):
+    if (occurrences_train_prob[a][b][c] < 0.0002):
         #print (pd.value_counts(cut_data))
         #print (occurrences_train_prob[a][b][c][d][e])
         print (occurrences_train_prob[a][b][c])
-        print (cut_data.index[i])
-
+        print (cut_data.index[i+2])
+        print("Attack at that time: ", attack_at_time(cut_data.index[i+2]))
 #occurrences_test_prob = np.true_divide(occurrences_test, len(cut_data))
 #print (occurrences_test_prob)
 #
