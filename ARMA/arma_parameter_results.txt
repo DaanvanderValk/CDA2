@@ -1,0 +1,34 @@
+Best ARMA parameters (p, q) for feature L_T1: (7, 5) yielding an AIC of -13649.29592566039
+Best ARMA parameters (p, q) for feature L_T2: (4, 6) yielding an AIC of -1895.4959046989898
+Best ARMA parameters (p, q) for feature L_T3: (7, 7) yielding an AIC of -9375.915544908556
+Best ARMA parameters (p, q) for feature L_T4: (3, 7) yielding an AIC of 7886.873356320462
+Best ARMA parameters (p, q) for feature L_T5: (6, 7) yielding an AIC of -829.1282689760119
+Best ARMA parameters (p, q) for feature L_T6: (6, 5) yielding an AIC of -12828.443875078872
+Best ARMA parameters (p, q) for feature L_T7: (4, 7) yielding an AIC of 13983.570768549054
+Best ARMA parameters (p, q) for feature F_PU1: (7, 6) yielding an AIC of 50828.50995193154
+Best ARMA parameters (p, q) for feature F_PU2: (4, 6) yielding an AIC of 75135.71891938259
+Best ARMA parameters (p, q) for feature F_PU3: (nan, nan) yielding an AIC of inf
+Best ARMA parameters (p, q) for feature F_PU4: (5, 7) yielding an AIC of 63119.37773569395
+Best ARMA parameters (p, q) for feature F_PU5: (nan, nan) yielding an AIC of inf
+Best ARMA parameters (p, q) for feature F_PU6: (1, 2) yielding an AIC of 28585.854927263095
+Best ARMA parameters (p, q) for feature F_PU7: (5, 6) yielding an AIC of 73514.75746342457
+Best ARMA parameters (p, q) for feature F_PU8: (6, 5) yielding an AIC of 66589.57603864257
+Best ARMA parameters (p, q) for feature F_PU9: (nan, nan) yielding an AIC of inf
+Best ARMA parameters (p, q) for feature F_PU10: (4, 5) yielding an AIC of 65917.53775714341
+Best ARMA parameters (p, q) for feature F_PU11: (0, 1) yielding an AIC of 7079.514595597204
+Best ARMA parameters (p, q) for feature F_V2: (7, 6) yielding an AIC of 77905.68138735935
+Best ARMA parameters (p, q) for feature P_J280: (7, 7) yielding an AIC of -78870.98496242735
+Best ARMA parameters (p, q) for feature P_J269: (7, 6) yielding an AIC of 40411.01308753596
+Best ARMA parameters (p, q) for feature P_J300: (4, 6) yielding an AIC of 31467.665911501295
+Best ARMA parameters (p, q) for feature P_J256: (7, 7) yielding an AIC of 50285.35384538233
+Best ARMA parameters (p, q) for feature P_J289: (7, 7) yielding an AIC of 31473.343983911396
+Best ARMA parameters (p, q) for feature P_J415: (7, 7) yielding an AIC of 59207.211159791696
+Best ARMA parameters (p, q) for feature P_J302: (7, 6) yielding an AIC of 44563.12859184672
+Best ARMA parameters (p, q) for feature P_J306: (5, 7) yielding an AIC of 57111.21100354387
+Best ARMA parameters (p, q) for feature P_J307: (7, 6) yielding an AIC of 44688.812368328254
+Best ARMA parameters (p, q) for feature P_J317: (7, 4) yielding an AIC of 52235.39952149622
+Best ARMA parameters (p, q) for feature P_J14: (7, 6) yielding an AIC of 40794.59488141292
+Best ARMA parameters (p, q) for feature P_J422: (5, 7) yielding an AIC of 30717.203970890823
+
+Note: in dataset 3, pumps 3, 5 and 9 are never activated, so the flow is always 0.
+As a result, no ARMA model could be constructed for these signals.
