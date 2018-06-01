@@ -17,11 +17,54 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
-#plt.style.use('fivethirtyeight')
+from pandas.tools.plotting import autocorrelation_plot
+from pandas.compat import lmap
 
+def autocorrelation_plot_limited(series, n_samples=None, ax=None, **kwds):
+    """Autocorrelation plot for time series.
+    Parameters:
+    -----------
+    series: Time series
+    ax: Matplotlib axis object, optional
+    kwds : keywords
+        Options to pass to matplotlib plotting method
+    Returns:
+    -----------
+    ax: Matplotlib axis object
+    """
+    n = len(series)
+    data = np.asarray(series)
+    if ax is None:
+        ax = plt.gca(xlim=(1, n_samples), ylim=(-1.0, 1.0))
+    mean = np.mean(data)
+    c0 = np.sum((data - mean) ** 2) / float(n)
+
+    def r(h):
+        return ((data[:n - h] - mean) *
+                (data[h:] - mean)).sum() / float(n) / c0
+    x = (np.arange(n) + 1).astype(int)
+    y = lmap(r, x)
+    z95 = 1.959963984540054
+    z99 = 2.5758293035489004
+    # Only show the 99% confidence interval
+    ax.axhline(y=z99 / np.sqrt(n), linestyle='--', color='grey')
+#    ax.axhline(y=z95 / np.sqrt(n), color='grey')
+    ax.axhline(y=0.0, color='black')
+#    ax.axhline(y=-z95 / np.sqrt(n), color='grey')
+    ax.axhline(y=-z99 / np.sqrt(n), linestyle='--', color='grey')
+    ax.set_xlabel("Lag")
+    ax.set_ylabel("Autocorrelation")
+    if n_samples:
+        ax.plot(x[:n_samples], y[:n_samples], **kwds)
+    else:
+        ax.plot(x, y, **kwds)
+    if 'label' in kwds:
+        ax.legend()
+    ax.grid()
+    return ax
 
 if __name__ == "__main__":
-    figure_size = (15, 8)
+    figure_size = (4, 2.5)
     
     # Features to model in ARMA: the SENSORS
     # Not considering: time, attack flag, and status of the pumps and valve (those are actuators)
@@ -29,6 +72,22 @@ if __name__ == "__main__":
     'F_PU2', 'F_PU3', 'F_PU4', 'F_PU5', 'F_PU6', 'F_PU7', 'F_PU8', 'F_PU9', 'F_PU10',
     'F_PU11', 'F_V2', 'P_J280', 'P_J269', 'P_J300', 'P_J256', 'P_J289', 'P_J415',
     'P_J302', 'P_J306', 'P_J307', 'P_J317', 'P_J14', 'P_J422']
+    
+    # We try to find the best ARMA order (p, q) to model each sensor
+    
+    
+    # APPROACH 1: Plot and study the autocorrelation plots for each sensor
+    feature = 'L_T1'
+    series = read_3_series(feature)
+    plt.figure(figsize=figure_size).suptitle('Autocorrelation')
+    autocorrelation_plot_limited(series, n_samples=100, label='{}'.format(feature))
+    plt.savefig('autocorrelation.svg', bbox_inches='tight')
+    plt.show()
+    
+    
+    
+    
+    # APPROACH 2: Try different ARMA parameters and calculate AIC scores to find the best fit per sensor
     
     # Prepare a simple grid search for ARMA parameters p and q.
     # Default values (in the Python implementation) are p, q = (2, 2).

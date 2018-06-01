@@ -1,0 +1,139 @@
+Generating and evaluating ARMA model of order L_T1 for sensor (7, 5):
+Model performance: AIC = -13649.29592566039
+Used threshold (95-percentile): 0.22135976069665708
+RAISED ALARMS: True positive rate: 17.73049645390071% (25/141).
+
+Generating and evaluating ARMA model of order L_T2 for sensor (4, 6):
+Model performance: AIC = -1895.4959046989898
+Used threshold (95-percentile): 0.4437564626152761
+RAISED ALARMS: True positive rate: 28.947368421052634% (33/114).
+
+Generating and evaluating ARMA model of order L_T3 for sensor (7, 7):
+Model performance: AIC = -9375.915544908556
+Used threshold (95-percentile): 0.28722834856129986
+RAISED ALARMS: True positive rate: 31.48148148148148% (34/108).
+
+Generating and evaluating ARMA model of order L_T4 for sensor (3, 7):
+Model performance: AIC = 7886.873356320462
+Used threshold (95-percentile): 0.7242908441787288
+RAISED ALARMS: True positive rate: 22.043010752688172% (41/186).
+
+Generating and evaluating ARMA model of order L_T5 for sensor (6, 7):
+Model performance: AIC = -829.1282689760119
+Used threshold (95-percentile): 0.4328294650291783
+RAISED ALARMS: True positive rate: 16.153846153846153% (21/130).
+
+Generating and evaluating ARMA model of order L_T6 for sensor (6, 5):
+Model performance: AIC = -12828.443875078872
+Used threshold (95-percentile): 0.25154115878787964
+RAISED ALARMS: True positive rate: 15.517241379310345% (18/116).
+
+Generating and evaluating ARMA model of order L_T7 for sensor (4, 7):
+Model performance: AIC = 13983.570768549054
+Used threshold (95-percentile): 1.020950309717677
+RAISED ALARMS: True positive rate: 20.0% (22/110).
+
+Generating and evaluating ARMA model of order F_PU1 for sensor (7, 6):
+Model performance: AIC = 50828.50995193154
+Used threshold (95-percentile): 6.599689424964467
+RAISED ALARMS: True positive rate: 25.38860103626943% (49/193).
+
+Generating and evaluating ARMA model of order F_PU2 for sensor (4, 6):
+Model performance: AIC = 75135.71891938259
+Used threshold (95-percentile): 16.404051912826034
+RAISED ALARMS: True positive rate: 22.76657060518732% (79/347).
+
+Generating and evaluating ARMA model of order F_PU4 for sensor (5, 7):
+Model performance: AIC = 63119.37773569395
+Used threshold (95-percentile): 18.230557427258237
+RAISED ALARMS: True positive rate: 19.083969465648856% (25/131).
+
+Generating and evaluating ARMA model of order F_PU6 for sensor (1, 2):
+Model performance: AIC = 28585.854927263095
+Used threshold (95-percentile): 0.03427177554383818
+RAISED ALARMS: True positive rate: 0.0% (0/54).
+
+Generating and evaluating ARMA model of order F_PU7 for sensor (5, 6):
+Model performance: AIC = 73514.75746342457
+Used threshold (95-percentile): 36.277660196335304
+RAISED ALARMS: True positive rate: 13.414634146341465% (22/164).
+
+Generating and evaluating ARMA model of order F_PU8 for sensor (6, 5):
+Model performance: AIC = 66589.57603864257
+Used threshold (95-percentile): 21.410631617150894
+RAISED ALARMS: True positive rate: 14.465408805031446% (23/159).
+
+Generating and evaluating ARMA model of order F_PU10 for sensor (4, 5):
+Model performance: AIC = 65917.53775714341
+Used threshold (95-percentile): 22.281403825711198
+RAISED ALARMS: True positive rate: 16.228070175438596% (37/228).
+
+Generating and evaluating ARMA model of order F_PU11 for sensor (0, 1):
+Model performance: AIC = 7079.514595597204
+Used threshold (95-percentile): 0.005473913004855611
+RAISED ALARMS: True positive rate: 0.0% (0/126).
+
+Generating and evaluating ARMA model of order F_V2 for sensor (7, 6):
+Model performance: AIC = 77905.68138735935
+Used threshold (95-percentile): 53.79866193802194
+RAISED ALARMS: True positive rate: 18.51851851851852% (20/108).
+
+Generating and evaluating ARMA model of order P_J280 for sensor (7, 7):
+Model performance: AIC = -78870.98496242735
+Used threshold (95-percentile): 0.002870421726825002
+RAISED ALARMS: True positive rate: 20.387453874538743% (221/1084).
+
+Generating and evaluating ARMA model of order P_J269 for sensor (7, 6):
+Model performance: AIC = 40411.01308753596
+Used threshold (95-percentile): 3.5736226731950094
+RAISED ALARMS: True positive rate: 24.561403508771928% (28/114).
+
+Generating and evaluating ARMA model of order P_J300 for sensor (4, 6):
+Model performance: AIC = 31467.665911501295
+Used threshold (95-percentile): 2.9356106457798896
+RAISED ALARMS: True positive rate: 18.980169971671387% (67/353).
+
+Generating and evaluating ARMA model of order P_J256 for sensor (7, 7):
+Model performance: AIC = 50285.35384538233
+Used threshold (95-percentile): 8.78577685273604
+RAISED ALARMS: True positive rate: 41.78082191780822% (61/146).
+
+Generating and evaluating ARMA model of order P_J289 for sensor (7, 7):
+Model performance: AIC = 31473.343983911396
+Used threshold (95-percentile): 2.9705926169638954
+RAISED ALARMS: True positive rate: 19.362745098039216% (79/408).
+
+Generating and evaluating ARMA model of order P_J415 for sensor (7, 7):
+Model performance: AIC = 59207.211159791696
+Used threshold (95-percentile): 16.597265498246365
+RAISED ALARMS: True positive rate: 31.818181818181817% (35/110).
+
+Generating and evaluating ARMA model of order P_J302 for sensor (7, 6):
+Model performance: AIC = 44563.12859184672
+Used threshold (95-percentile): 6.3264981748227935
+RAISED ALARMS: True positive rate: 37.096774193548384% (46/124).
+
+Generating and evaluating ARMA model of order P_J306 for sensor (5, 7):
+Model performance: AIC = 57111.21100354387
+Used threshold (95-percentile): 12.292994145745515
+RAISED ALARMS: True positive rate: 16.455696202531644% (26/158).
+
+Generating and evaluating ARMA model of order P_J307 for sensor (7, 6):
+Model performance: AIC = 44688.812368328254
+Used threshold (95-percentile): 6.374181617812129
+RAISED ALARMS: True positive rate: 27.27272727272727% (30/110).
+
+Generating and evaluating ARMA model of order P_J317 for sensor (7, 4):
+Model performance: AIC = 52235.39952149622
+Used threshold (95-percentile): 9.453572310939812
+RAISED ALARMS: True positive rate: 13.40782122905028% (24/179).
+
+Generating and evaluating ARMA model of order P_J14 for sensor (7, 6):
+Model performance: AIC = 40794.59488141292
+Used threshold (95-percentile): 6.327350366189089
+RAISED ALARMS: True positive rate: 19.81981981981982% (22/111).
+
+Generating and evaluating ARMA model of order P_J422 for sensor (5, 7):
+Model performance: AIC = 30717.203970890823
+Used threshold (95-percentile): 2.817589569184758
+RAISED ALARMS: True positive rate: 19.16167664670659% (64/334).
