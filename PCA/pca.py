@@ -10,6 +10,7 @@ import sys
 sys.path.append('../')
 from Data.datareader import *
 
+import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -47,34 +48,64 @@ if __name__ == "__main__":
     
     
     
+    # To determine the number of components to use, try all and plot the variance that they capture
+    pca = PCA()
+    pca.fit(df_train_transformed)
+    pca_model = pca.transform(df_train_transformed)
+    x_axis = np.arange(1, len(features)+1, 1)
+    plt.xlabel('Principal components')
+    plt.ylabel('Variance')
+    plt.axhline(y=0.99, c='darkgrey', linestyle='--', linewidth=1, label="0.99 boundary")
+    plt.axhline(y=0.95, c='grey', linestyle='--', linewidth=1, label="0.95 boundary")
+    plt.plot(x_axis, pca.explained_variance_ratio_.cumsum(), label="Variance captured (cumulative)")
+    plt.legend(loc=4)
+    plt.show()
+    
+#    Alternative approach:    
+#    pca = PCA(.95)
+#    pca.fit_transform(df_train_transformed)
+#    print("PCA components for 95% of the variance:", pca.n_components_)
+#    pca = PCA(.99)
+#    pca.fit_transform(df_train_transformed)
+#    print("PCA components for 99% of the variance:", pca.n_components_)
+    
+    # Results:  12 components capture 95% of the variance
+    #           15 components capture 99% of the variance
     
     
     
-    # Create PCA
-    pca = PCA(n_components=2)
-    principalComponents = pca.fit_transform(df_train_transformed)
-    print("principalComponents:", principalComponents)
+    
+    
+    # Create PCA with 15 components and create a scatterplot for 2 components
+    component1, component2 = 13, 14
+    pca = PCA(n_components=15)
+    # Fit with training set
+    pca.fit(df_train_transformed)
+    # Transform the training or test set
+    principalComponents = pca.transform(df_train_transformed)
+    
+    principalComponents = principalComponents[:,[component1, component2]]
 
     principalDf = pd.DataFrame(data = principalComponents,
-                               columns = ['principal component 1', 'principal component 2'], index=df_train.index)
-    print("principalDf:", principalDf)
+                               columns = ['principal component {}'.format(component1), 'principal component {}'.format(component2)], index=df_train.index)
+    #print("principalDf:", principalDf)
     
     finalDf = pd.concat([principalDf, df_train_flags], axis = 1)
-    print("finalDf:", finalDf)
+    #print("finalDf:", finalDf)
     
     # Plot the results
     fig = plt.figure(figsize = (8,8))
     ax = fig.add_subplot(1,1,1) 
-    ax.set_xlabel('Principal Component 1', fontsize = 15)
-    ax.set_ylabel('Principal Component 2', fontsize = 15)
+    ax.set_xlabel('Principal Component {}'.format(component1), fontsize = 15)
+    ax.set_ylabel('Principal Component {}'.format(component2), fontsize = 15)
     ax.set_title('2 component PCA', fontsize = 20)
     
     targets = [0, 1]
     colors = ['g', 'r']
     for target, color in zip(targets,colors):
         indicesToKeep = finalDf['ATT_FLAG'] == target
-        ax.scatter(finalDf.loc[indicesToKeep, 'principal component 1']
-                   , finalDf.loc[indicesToKeep, 'principal component 2']
+        ax.scatter(finalDf.loc[indicesToKeep, 'principal component {}'.format(component1)]
+                   , finalDf.loc[indicesToKeep, 'principal component {}'.format(component2)]
                    , c = color
                    , s = 1)
     ax.legend(targets)
@@ -83,6 +114,3 @@ if __name__ == "__main__":
     print("Number of measurements attacked with 1:", len(df_train.loc[df_train_flags == 1]))
     print("Number of measurements attacked with 1:", len(finalDf.loc[finalDf['ATT_FLAG'] == 1]))
     
-    pca = PCA(.95)
-    pca.fit_transform(df_train_transformed)
-    print("PCA components for 95% of the variance:", pca.n_components_)
