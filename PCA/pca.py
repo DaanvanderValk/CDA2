@@ -27,7 +27,7 @@ if __name__ == "__main__":
      'P_J306', 'P_J307', 'P_J317', 'P_J14', 'P_J422']
     
     # Load training and test data
-    df_train = read_4_df()
+    df_train = read_3_df()
     df_test = read_test_df()
     
     # Load classification in a separate data frame
