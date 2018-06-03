@@ -4,7 +4,7 @@ Created on Wed May 23 17:13:58 2018
 
 @author: sande
 """
-
+#Can ignore this file while evaluating, you can have a look at trigrams.py and fivegrams.py files
 from pandas import read_csv
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -53,7 +53,8 @@ print (cut_data.head())
 print (bins)
 #occurrences_test = np.ones((no_quantiles,no_quantiles,no_quantiles,no_quantiles,no_quantiles))
 occurrences_test = np.ones((no_quantiles,no_quantiles,no_quantiles))
-sum = 0
+count = 0
+true_positive_count = 0
 for i in range(0,len(cut_data)-5): 
     a = cut_data[i]
     b = cut_data[i+1]
@@ -61,12 +62,17 @@ for i in range(0,len(cut_data)-5):
 #    d = cut_data[i+3]
 #    e = cut_data[i+4]
     #if (occurrences_train_prob[a][b][c][d][e] < 0.0002):
-    if (occurrences_train_prob[a][b][c] < 0.0002):
+    if (occurrences_train_prob[a][b][c] < 0.0009):
         #print (pd.value_counts(cut_data))
         #print (occurrences_train_prob[a][b][c][d][e])
         print (occurrences_train_prob[a][b][c])
         print (cut_data.index[i+2])
-        print("Attack at that time: ", attack_at_time(cut_data.index[i+2]))
+        #print("Attack at that time: ", attack_at_time(cut_data.index[i+2]))
+        count = count + 1
+        if attack_at_time(cut_data.index[i+2]) :
+            true_positive_count = true_positive_count + 1
+
+print (true_positive_count/count)
 #occurrences_test_prob = np.true_divide(occurrences_test, len(cut_data))
 #print (occurrences_test_prob)
 #
