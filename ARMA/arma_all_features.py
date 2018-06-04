@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # the results are copied from arma_parameter_results.txt
     
     # Percentile of (absolute) errors to be taken as threshold
-    percentile_threshold = 95
+    percentile_thresholds = [98]
     
     # Pumps 3, 5 and 9 could not be modelled.
     
@@ -67,71 +67,79 @@ if __name__ == "__main__":
     
     found_attacks_arma = set()
     
-    for feature in arma_order_per_feature.keys():
-        order = arma_order_per_feature[feature]
-        measures_needed = np.max(order) # Number of measures needed: maximum of p and q
-        series_training = read_3_series(feature)
-        series_test = read_test_series(feature)
-        test_length = len(series_test)
-        
+    for percentile_threshold in percentile_thresholds:
         print()
-        print("Generating and evaluating ARMA model of order {} for sensor {}:".format(feature, order))
-        
-        # Generate the ARMA model, using only the training data
-        mod = ARMA(series_training, order=order)
-        model_fit = mod.fit()
-        
-        # Get the parameters from the ARMA model to make out-of-sample predictions
-        params = model_fit.params
-        p = model_fit.k_ar
-        q = model_fit.k_ma
-        k_exog = model_fit.k_exog
-        k_trend = model_fit.k_trend
-        
-        # Print model quality measures (of the predictions for the training data)
-        aic = model_fit.aic
-        print("Model performance: AIC = {}".format(aic))
-        
-        # Determine the 95-percentile of the absolute value of the residuals in the training set predictions
-        training_residuals_abs = np.absolute(model_fit.resid)
-        threshold = np.percentile(training_residuals_abs, percentile_threshold)
-        print("Used threshold ({}-percentile): {}".format(percentile_threshold, threshold))
-        
-        # Store the predictions and their residual errors in arrays
-        predictions = np.zeros(test_length)
-        prediction_residuals = np.zeros(test_length)
-            # (Note that the residuals are initially set 0, because you cannot get a prediction for the first values
-            #  as you need a couple of measurements first. This means that the first predictions can be off a bit.)
-        prediction_residuals_abs = np.zeros(test_length)
-        count = 0
-        count_pos = 0
-        found_attacks = set()
-        
-        # Make the predictions for the test data, using only the ARMA model generated with the training data
-        for position in range(measures_needed, test_length):
-            #print("Looking at residuals:", prediction_residuals[position-measures_needed:position])
-            #print("And previous values:", series_test[position-measures_needed:position])
-            predictions[position] = _arma_predict_out_of_sample(params, 1, prediction_residuals[position-measures_needed:position], p, q, k_trend, k_exog, endog=series_test[position-measures_needed:position], exog=None, start=measures_needed)
-            prediction_residuals[position] = series_test[position] - predictions[position]
-            resi_abs = np.abs(series_test[position] - predictions[position])
-            prediction_residuals_abs[position] = resi_abs
-            # We don't throw any alarms for the first max(p, q) predictions,
-            # as the first couple of predictions are typically more off then others
-            if position > 2 * measures_needed and resi_abs > threshold:
-                # Raise alarm!
-                count += 1
-                time = series_test[position:position+1].index
-                attack_no = get_attack_number(time)
-                
-                if(attack_no != 0):
-                    count_pos += 1
-                    found_attacks.add(attack_no)
+        print("Threshold of {} percent (of absolute residuals):".format(percentile_threshold))
+        for feature in arma_order_per_feature.keys():
+            order = arma_order_per_feature[feature]
+            measures_needed = np.max(order) # Number of measures needed: maximum of p and q
+            series_training = read_3_series(feature)
+            series_test = read_4_series(feature)
+            test_length = len(series_test)
+            
+            print()
+            print("Generating and evaluating ARMA model of order {} for sensor {}:".format(feature, order))
+            
+            # Generate the ARMA model, using only the training data
+            mod = ARMA(series_training, order=order)
+            model_fit = mod.fit()
+            
+            # Get the parameters from the ARMA model to make out-of-sample predictions
+            params = model_fit.params
+            p = model_fit.k_ar
+            q = model_fit.k_ma
+            k_exog = model_fit.k_exog
+            k_trend = model_fit.k_trend
+            
+            # Print model quality measures (of the predictions for the training data)
+            aic = model_fit.aic
+            print("Model performance: AIC = {}".format(aic))
+            
+            # Determine the 95-percentile of the absolute value of the residuals in the training set predictions
+            training_residuals_abs = np.absolute(model_fit.resid)
+            threshold = np.percentile(training_residuals_abs, percentile_threshold)
+            print("Used threshold ({}-percentile): {}".format(percentile_threshold, threshold))
+            
+            # Store the predictions and their residual errors in arrays
+            predictions = np.zeros(test_length)
+            prediction_residuals = np.zeros(test_length)
+                # (Note that the residuals are initially set 0, because you cannot get a prediction for the first values
+                #  as you need a couple of measurements first. This means that the first predictions can be off a bit.)
+            prediction_residuals_abs = np.zeros(test_length)
+            count = 0
+            count_pos = 0
+            found_attacks = set()
+            
+            # Make the predictions for the test data, using only the ARMA model generated with the training data
+            for position in range(measures_needed, test_length):
+                #print("Looking at residuals:", prediction_residuals[position-measures_needed:position])
+                #print("And previous values:", series_test[position-measures_needed:position])
+                predictions[position] = _arma_predict_out_of_sample(params, 1, prediction_residuals[position-measures_needed:position], p, q, k_trend, k_exog, endog=series_test[position-measures_needed:position], exog=None, start=measures_needed)
+                prediction_residuals[position] = series_test[position] - predictions[position]
+                resi_abs = np.abs(series_test[position] - predictions[position])
+                prediction_residuals_abs[position] = resi_abs
+                # We don't throw any alarms for the first max(p, q) predictions,
+                # as the first couple of predictions are typically more off then others
+                if position > 2 * measures_needed and resi_abs > threshold:
+                    # Raise alarm!
+                    count += 1
+                    time = series_test[position:position+1].index
+                    attack_no = get_attack_number(time)
+                    
+                    if(attack_no != 0):
+                        count_pos += 1
+                        found_attacks.add(attack_no)
+                    
                 
             
+            precision = count_pos / count * 100
+            print("Precision: {}% ({}/{}).".format(precision, count_pos, count))
+            print("Identified attacks:", found_attacks)
+            
+            # Update overall attacks identified by ARMA
+            found_attacks_arma.update(found_attacks)
         
-        precision = count_pos / count * 100
-        print("Precision: {}% ({}/{}).".format(precision, count_pos, count))
-        print("Identified attacks:", found_attacks)
         
-        # Update overall attacks identified by ARMA
-        found_attacks_arma.update(found_attacks)
+        print()
+        # Finally, show all attacks that have been found in this dataset
+        print("All identified attacks by ARMA in this dataset with threshold {}:".format(percentile_threshold), found_attacks_arma)
