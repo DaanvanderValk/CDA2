@@ -65,6 +65,8 @@ if __name__ == "__main__":
         'P_J422': (5, 7), # AIC: 30717.203970890823
     }
     
+    found_attacks_arma = set()
+    
     for feature in arma_order_per_feature.keys():
         order = arma_order_per_feature[feature]
         measures_needed = np.max(order) # Number of measures needed: maximum of p and q
@@ -103,6 +105,7 @@ if __name__ == "__main__":
         prediction_residuals_abs = np.zeros(test_length)
         count = 0
         count_pos = 0
+        found_attacks = set()
         
         # Make the predictions for the test data, using only the ARMA model generated with the training data
         for position in range(measures_needed, test_length):
@@ -115,15 +118,20 @@ if __name__ == "__main__":
             # We don't throw any alarms for the first max(p, q) predictions,
             # as the first couple of predictions are typically more off then others
             if position > 2 * measures_needed and resi_abs > threshold:
+                # Raise alarm!
                 count += 1
                 time = series_test[position:position+1].index
-                #print("Alert on {}: {} positive".format(time, attack_at_time(time)))
-                if(attack_at_time(time)):
+                attack_no = get_attack_number(time)
+                
+                if(attack_no != 0):
                     count_pos += 1
+                    found_attacks.add(attack_no)
                 
             
         
-        tpr = count_pos / count * 100
-        print("RAISED ALARMS: True positive rate: {}% ({}/{}).".format(tpr, count_pos, count))
+        precision = count_pos / count * 100
+        print("Precision: {}% ({}/{}).".format(precision, count_pos, count))
+        print("Identified attacks:", found_attacks)
         
-        
+        # Update overall attacks identified by ARMA
+        found_attacks_arma.update(found_attacks)

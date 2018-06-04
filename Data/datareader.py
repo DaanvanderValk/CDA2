@@ -31,6 +31,12 @@ def read_4_series(feature):
 def read_test_series(feature):
     return pd.read_csv('../Data/BATADAL_test_dataset.csv', parse_dates=[0], date_parser=parser, index_col=0, squeeze=True, usecols=['DATETIME', feature])
 
+
+# Arguments:
+#   * time: datetime of attack
+# Returns a boolean:
+#   False    if there is no attack at that time
+#   True     otherwise
 def attack_at_time(time):
     attacks = [
             # Dataset 4 attacks (1-7)
@@ -56,6 +62,11 @@ def attack_at_time(time):
     
     return False
 
+# Arguments:
+#   * time: datetime of attack
+# Returns an integer:
+#   0    if there is no attack at that time, or
+#   x    attack number as indicated by the BATADAL authors
 def get_attack_number(time):
     attacks = [
             # Dataset 4 attacks (1-7)
