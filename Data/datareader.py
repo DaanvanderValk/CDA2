@@ -116,5 +116,32 @@ def get_attack_number_04(time):
     if attacks[6][0] <= time <= attacks[6][1]:
         return 7
     
+    return 0
+
+def get_attack_number_test(time):
+    attacks = [
+           # Test set attacks (8-14)
+            [pd.to_datetime('2017-01-16 09:00:00'), pd.to_datetime('2017-01-19 06:00:00')],
+            [pd.to_datetime('2017-01-30 08:00:00'), pd.to_datetime('2017-02-02 00:00:00')],
+            [pd.to_datetime('2017-02-09 03:00:00'), pd.to_datetime('2017-02-10 09:00:00')],
+            [pd.to_datetime('2017-02-12 01:00:00'), pd.to_datetime('2017-02-13 07:00:00')],
+            [pd.to_datetime('2017-02-24 05:00:00'), pd.to_datetime('2017-02-28 08:00:00')],
+            [pd.to_datetime('2017-03-10 14:00:00'), pd.to_datetime('2017-03-13 21:00:00')],
+            [pd.to_datetime('2017-03-25 20:00:00'), pd.to_datetime('2017-03-27 01:00:00')]
+    ]
+    if attacks[0][0] <= time <= attacks[0][1]:
+        return 8
+    if attacks[1][0] <= time <= attacks[1][1]:
+        return 9
+    if attacks[2][0] <= time <= attacks[2][1]:
+        return 10
+    if attacks[3][0] <= time <= attacks[3][1]:
+        return 11
+    if attacks[4][0] <= time <= attacks[4][1]:
+        return 12
+    if attacks[5][0] <= time <= attacks[5][1]:
+        return 13
+    if attacks[6][0] <= time <= attacks[6][1]:
+        return 14
     
     return 0
