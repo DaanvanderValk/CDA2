@@ -56,7 +56,7 @@ def attack_at_time(time):
     
     return False
 
-def attack_at_time_04(time):
+def get_attack_number(time):
     attacks = [
             # Dataset 4 attacks (1-7)
             [pd.to_datetime('2016-09-13 23:00:00'), pd.to_datetime('2016-09-16 00:00:00')],
@@ -66,15 +66,6 @@ def attack_at_time_04(time):
             [pd.to_datetime('2016-11-26 17:00:00'), pd.to_datetime('2016-11-29 04:00:00')],
             [pd.to_datetime('2016-12-06 07:00:00'), pd.to_datetime('2016-12-10 04:00:00')],
             [pd.to_datetime('2016-12-14 15:00:00'), pd.to_datetime('2016-12-19 04:00:00')],
-    ]
-    for attack in attacks:
-        if attack[0] <= time <= attack[1]:
-            return True
-    
-    return False
-
-def attack_at_time_test(time):
-    attacks = [
             # Test set attacks (8-14)
             [pd.to_datetime('2017-01-16 09:00:00'), pd.to_datetime('2017-01-19 06:00:00')],
             [pd.to_datetime('2017-01-30 08:00:00'), pd.to_datetime('2017-02-02 00:00:00')],
@@ -84,64 +75,21 @@ def attack_at_time_test(time):
             [pd.to_datetime('2017-03-10 14:00:00'), pd.to_datetime('2017-03-13 21:00:00')],
             [pd.to_datetime('2017-03-25 20:00:00'), pd.to_datetime('2017-03-27 01:00:00')]
     ]
-    for attack in attacks:
-        if attack[0] <= time <= attack[1]:
-            return True
     
-    return False
+    for idx, attack in enumerate(attacks):
+        if attack[0] <= time <= attack[1]:
+            return idx+1
+    
+    return 0
+
+def attack_at_time_04(time):
+    return attack_at_time(time)
+
+def attack_at_time_test(time):
+    return attack_at_time(time)
 
 def get_attack_number_04(time):
-    attacks = [
-            # Dataset 4 attacks (1-7)
-            [pd.to_datetime('2016-09-13 23:00:00'), pd.to_datetime('2016-09-16 00:00:00')],
-            [pd.to_datetime('2016-09-26 11:00:00'), pd.to_datetime('2016-09-27 10:00:00')],
-            [pd.to_datetime('2016-10-09 09:00:00'), pd.to_datetime('2016-10-11 20:00:00')],
-            [pd.to_datetime('2016-10-29 19:00:00'), pd.to_datetime('2016-11-02 16:00:00')],
-            [pd.to_datetime('2016-11-26 17:00:00'), pd.to_datetime('2016-11-29 04:00:00')],
-            [pd.to_datetime('2016-12-06 07:00:00'), pd.to_datetime('2016-12-10 04:00:00')],
-            [pd.to_datetime('2016-12-14 15:00:00'), pd.to_datetime('2016-12-19 04:00:00')],
-    ]
-    if attacks[0][0] <= time <= attacks[0][1]:
-        return 1
-    if attacks[1][0] <= time <= attacks[1][1]:
-        return 2
-    if attacks[2][0] <= time <= attacks[2][1]:
-        return 3
-    if attacks[3][0] <= time <= attacks[3][1]:
-        return 4
-    if attacks[4][0] <= time <= attacks[4][1]:
-        return 5
-    if attacks[5][0] <= time <= attacks[5][1]:
-        return 6
-    if attacks[6][0] <= time <= attacks[6][1]:
-        return 7
-    
-    return 0
+    return get_attack_number(time)
 
 def get_attack_number_test(time):
-    attacks = [
-           # Test set attacks (8-14)
-            [pd.to_datetime('2017-01-16 09:00:00'), pd.to_datetime('2017-01-19 06:00:00')],
-            [pd.to_datetime('2017-01-30 08:00:00'), pd.to_datetime('2017-02-02 00:00:00')],
-            [pd.to_datetime('2017-02-09 03:00:00'), pd.to_datetime('2017-02-10 09:00:00')],
-            [pd.to_datetime('2017-02-12 01:00:00'), pd.to_datetime('2017-02-13 07:00:00')],
-            [pd.to_datetime('2017-02-24 05:00:00'), pd.to_datetime('2017-02-28 08:00:00')],
-            [pd.to_datetime('2017-03-10 14:00:00'), pd.to_datetime('2017-03-13 21:00:00')],
-            [pd.to_datetime('2017-03-25 20:00:00'), pd.to_datetime('2017-03-27 01:00:00')]
-    ]
-    if attacks[0][0] <= time <= attacks[0][1]:
-        return 8
-    if attacks[1][0] <= time <= attacks[1][1]:
-        return 9
-    if attacks[2][0] <= time <= attacks[2][1]:
-        return 10
-    if attacks[3][0] <= time <= attacks[3][1]:
-        return 11
-    if attacks[4][0] <= time <= attacks[4][1]:
-        return 12
-    if attacks[5][0] <= time <= attacks[5][1]:
-        return 13
-    if attacks[6][0] <= time <= attacks[6][1]:
-        return 14
-    
-    return 0
+    return get_attack_number(time)
