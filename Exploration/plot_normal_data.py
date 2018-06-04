@@ -37,7 +37,7 @@ if __name__ == "__main__":
 #    print(df.describe())
     
     figure_size = (11, 6)
-    #df.plot(x="DATETIME", figsize=figure_size, title='All data in one plot')
+    df.plot(x="DATETIME", figsize=figure_size, title='All data in one plot')
     
     df = select_dates(df, '2014-05-01', '2014-05-14')
     #df.plot(x="DATETIME", figsize=figure_size, title='All features in May 2014')
@@ -57,4 +57,3 @@ if __name__ == "__main__":
     df_cluster_pu1_2_3.plot(x="time", figsize=figure_size, title='Cluster near pump 1, 2, 3 in the first half of May 2014').legend(bbox_to_anchor=(0.85, 0.85))
     
     plt.savefig("cyclic_behavior.svg", bbox_inches='tight')
-    
