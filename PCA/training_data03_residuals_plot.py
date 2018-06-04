@@ -27,6 +27,9 @@ features = ['L_T1', 'L_T2', 'L_T3', 'L_T4', 'L_T5', 'L_T6', 'L_T7',
 
 df3 = read_3_df()
 df3 = df3[features]
+
+df_without_outliers = df3
+scaler = StandardScaler()
 normalized_training = scaler.fit_transform(df3)
 spe = np.zeros((normalized_training.shape[0]))
     
@@ -47,7 +50,7 @@ for i in range(normalized_training.shape[0]):
     y_residual[i] = np.dot(I - C, y)
 
 #for threshold in range(270,560,30):
-for threshold in range(200,600,20):
+for threshold in range(200,500,20):
 # flagged will be set to 1 if the spe is greater than the threshold 
     count = 0
     flagged = np.zeros((normalized_training.shape[0]))
@@ -56,6 +59,12 @@ for threshold in range(200,600,20):
         if(spe[i] > threshold):
             flagged[i] = 1
             count = count + 1
+            #hardcoding the best threshold value to avoid creating one more redundant loop just to create new dataframe
+            if (threshold == 380):
+                #A dataframe which contains training data without outliers and this will be used in pca_all.py
+                df_without_outliers = df_without_outliers.drop(df_without_outliers.index[i])
+                #Save the df in a file TrainingDfwithoutOutliers
+                df_without_outliers.to_pickle("TrainingDfwithoutOutliers")
             
     df3 = df3.assign(ResidualVector=spe)
     df3['ResidualVector'].plot(figsize=(15,5),label="Residuals in normal data ")
@@ -66,3 +75,5 @@ for threshold in range(200,600,20):
     print ("number of outliers or false positives ", count, "for threshold ", threshold)
     #print ("total ", normalized_training.shape[0])
 
+print (df3.shape)
+print (df_without_outliers.shape)

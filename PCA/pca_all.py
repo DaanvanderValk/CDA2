@@ -7,6 +7,8 @@ Created on Sat Jun  2 12:43:36 2018
 
 #After finding the number of components from pca.py and threshold from training data in training_data03_residuals_plot.py
 #We find finding the performance of pca on test dataset and identifying attacks detected by pca
+
+#This has to be executed only after executing training_data03_residuals_plot.py so that we get training dataset without outliers
 import numpy as np
 from sklearn.decomposition import PCA
 import pandas as pd
@@ -28,6 +30,8 @@ features = ['L_T1', 'L_T2', 'L_T3', 'L_T4', 'L_T5', 'L_T6', 'L_T7',
 
 df_train = read_3_df()
 df_test = read_4_df()
+#Retrieve the df from a file TrainingDfwithoutOutliers and use it to train the model 
+df_train = pd.read_pickle("TrainingDfwithoutOutliers")
 
 # Only work with the selected features
 df_train = df_train[features]
@@ -87,16 +91,16 @@ tn = 0
 fn = 0
 attacks = set()
 for i in range(df_test_transformed.shape[0]):
-    if(attack_at_time_04(df_test.index[i]) and flagged[i] == 1.0):
+    if(attack_at_time(df_test.index[i]) and flagged[i] == 1.0):
         #In case of true positives, identify the number of attack
         attacks.add(get_attack_number_04(df_test.index[i]))
         tp = tp + 1
         
-    if((attack_at_time_04(df_test.index[i]) == False) and flagged[i] == 1.0):
+    if((attack_at_time(df_test.index[i]) == False) and flagged[i] == 1.0):
         fp = fp + 1
-    if((attack_at_time_04(df_test.index[i]) == False) and flagged[i] == 0.0):
+    if((attack_at_time(df_test.index[i]) == False) and flagged[i] == 0.0):
         tn = tn + 1    
-    if(attack_at_time_04(df_test.index[i]) and flagged[i] == 0.0):
+    if(attack_at_time(df_test.index[i]) and flagged[i] == 0.0):
         fn = fn + 1
 precision = tp/(tp+fp)
 recall = tp/(tp+fn)
