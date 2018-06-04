@@ -78,7 +78,7 @@ if __name__ == "__main__":
             test_length = len(series_test)
             
             print()
-            print("Generating and evaluating ARMA model of order {} for sensor {}:".format(feature, order))
+            print("Generating and evaluating ARMA model for sensor {} of order {}:".format(feature, order))
             
             # Generate the ARMA model, using only the training data
             mod = ARMA(series_training, order=order)
