@@ -1,0 +1,580 @@
+Threshold of 95 percent (of absolute residuals):
+
+Generating and evaluating ARMA model of order L_T1 for sensor (7, 5):
+Model performance: AIC = -13649.29592566039
+Used threshold (95-percentile): 0.22135976069665708
+Precision: 17.73049645390071% (25/141).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T2 for sensor (4, 6):
+Model performance: AIC = -1895.4959046989898
+Used threshold (95-percentile): 0.4437564626152761
+Precision: 28.947368421052634% (33/114).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T3 for sensor (7, 7):
+Model performance: AIC = -9375.915544908556
+Used threshold (95-percentile): 0.28722834856129986
+Precision: 31.48148148148148% (34/108).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T4 for sensor (3, 7):
+Model performance: AIC = 7886.873356320462
+Used threshold (95-percentile): 0.7242908441787288
+Precision: 22.043010752688172% (41/186).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T5 for sensor (6, 7):
+Model performance: AIC = -829.1282689760119
+Used threshold (95-percentile): 0.4328294650291783
+Precision: 16.153846153846153% (21/130).
+Identified attacks: {8, 9, 10, 12, 13}
+
+Generating and evaluating ARMA model of order L_T6 for sensor (6, 5):
+Model performance: AIC = -12828.443875078872
+Used threshold (95-percentile): 0.25154115878787964
+Precision: 15.517241379310345% (18/116).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T7 for sensor (4, 7):
+Model performance: AIC = 13983.570768549054
+Used threshold (95-percentile): 1.020950309717677
+Precision: 20.0% (22/110).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU1 for sensor (7, 6):
+Model performance: AIC = 50828.50995193154
+Used threshold (95-percentile): 6.599689424964467
+Precision: 25.38860103626943% (49/193).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU2 for sensor (4, 6):
+Model performance: AIC = 75135.71891938259
+Used threshold (95-percentile): 16.404051912826034
+Precision: 22.76657060518732% (79/347).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU4 for sensor (5, 7):
+Model performance: AIC = 63119.37773569395
+Used threshold (95-percentile): 18.230557427258237
+Precision: 19.083969465648856% (25/131).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU6 for sensor (1, 2):
+Model performance: AIC = 28585.854927263095
+Used threshold (95-percentile): 0.03427177554383818
+Precision: 0.0% (0/54).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_PU7 for sensor (5, 6):
+Model performance: AIC = 73514.75746342457
+Used threshold (95-percentile): 36.277660196335304
+Precision: 13.414634146341465% (22/164).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU8 for sensor (6, 5):
+Model performance: AIC = 66589.57603864257
+Used threshold (95-percentile): 21.410631617150894
+Precision: 14.465408805031446% (23/159).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU10 for sensor (4, 5):
+Model performance: AIC = 65917.53775714341
+Used threshold (95-percentile): 22.281403825711198
+Precision: 16.228070175438596% (37/228).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU11 for sensor (0, 1):
+Model performance: AIC = 7079.514595597204
+Used threshold (95-percentile): 0.005473913004855611
+Precision: 0.0% (0/126).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_V2 for sensor (7, 6):
+Model performance: AIC = 77905.68138735935
+Used threshold (95-percentile): 53.79866193802194
+Precision: 18.51851851851852% (20/108).
+Identified attacks: {8, 9, 10, 11, 13, 14}
+
+Generating and evaluating ARMA model of order P_J280 for sensor (7, 7):
+Model performance: AIC = -78870.98496242735
+Used threshold (95-percentile): 0.002870421726825002
+Precision: 20.387453874538743% (221/1084).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J269 for sensor (7, 6):
+Model performance: AIC = 40411.01308753596
+Used threshold (95-percentile): 3.5736226731950094
+Precision: 24.561403508771928% (28/114).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J300 for sensor (4, 6):
+Model performance: AIC = 31467.665911501295
+Used threshold (95-percentile): 2.9356106457798896
+Precision: 18.980169971671387% (67/353).
+Identified attacks: {8, 9, 10, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J256 for sensor (7, 7):
+Model performance: AIC = 50285.35384538233
+Used threshold (95-percentile): 8.78577685273604
+Precision: 41.78082191780822% (61/146).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J289 for sensor (7, 7):
+Model performance: AIC = 31473.343983911396
+Used threshold (95-percentile): 2.9705926169638954
+Precision: 19.362745098039216% (79/408).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J415 for sensor (7, 7):
+Model performance: AIC = 59207.211159791696
+Used threshold (95-percentile): 16.597265498246365
+Precision: 31.818181818181817% (35/110).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J302 for sensor (7, 6):
+Model performance: AIC = 44563.12859184672
+Used threshold (95-percentile): 6.3264981748227935
+Precision: 37.096774193548384% (46/124).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J306 for sensor (5, 7):
+Model performance: AIC = 57111.21100354387
+Used threshold (95-percentile): 12.292994145745515
+Precision: 16.455696202531644% (26/158).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J307 for sensor (7, 6):
+Model performance: AIC = 44688.812368328254
+Used threshold (95-percentile): 6.374181617812129
+Precision: 27.27272727272727% (30/110).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J317 for sensor (7, 4):
+Model performance: AIC = 52235.39952149622
+Used threshold (95-percentile): 9.453572310939812
+Precision: 13.40782122905028% (24/179).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J14 for sensor (7, 6):
+Model performance: AIC = 40794.59488141292
+Used threshold (95-percentile): 6.327350366189089
+Precision: 19.81981981981982% (22/111).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J422 for sensor (5, 7):
+Model performance: AIC = 30717.203970890823
+Used threshold (95-percentile): 2.817589569184758
+Precision: 19.16167664670659% (64/334).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+All identified attacks by ARMA in this dataset with threshold 95: {8, 9, 10, 11, 12, 13, 14}
+Threshold of 96 percent (of absolute residuals):
+
+Generating and evaluating ARMA model of order L_T1 for sensor (7, 5):
+Model performance: AIC = -13649.29592566039
+Used threshold (96-percentile): 0.23985188969960652
+Precision: 17.24137931034483% (20/116).
+Identified attacks: {8, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T2 for sensor (4, 6):
+Model performance: AIC = -1895.4959046989898
+Used threshold (96-percentile): 0.47240096610708904
+Precision: 26.666666666666668% (24/90).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T3 for sensor (7, 7):
+Model performance: AIC = -9375.915544908556
+Used threshold (96-percentile): 0.301748313361895
+Precision: 32.142857142857146% (27/84).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T4 for sensor (3, 7):
+Model performance: AIC = 7886.873356320462
+Used threshold (96-percentile): 0.7691539292367
+Precision: 24.832214765100673% (37/149).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T5 for sensor (6, 7):
+Model performance: AIC = -829.1282689760119
+Used threshold (96-percentile): 0.4512363998583646
+Precision: 12.087912087912088% (11/91).
+Identified attacks: {8, 9, 10, 12}
+
+Generating and evaluating ARMA model of order L_T6 for sensor (6, 5):
+Model performance: AIC = -12828.443875078872
+Used threshold (96-percentile): 0.26745755054412934
+Precision: 14.444444444444443% (13/90).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T7 for sensor (4, 7):
+Model performance: AIC = 13983.570768549054
+Used threshold (96-percentile): 1.0916096562092747
+Precision: 18.478260869565215% (17/92).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU1 for sensor (7, 6):
+Model performance: AIC = 50828.50995193154
+Used threshold (96-percentile): 11.013616223772566
+Precision: 28.05755395683453% (39/139).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU2 for sensor (4, 6):
+Model performance: AIC = 75135.71891938259
+Used threshold (96-percentile): 26.40344406053861
+Precision: 25.6198347107438% (62/242).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU4 for sensor (5, 7):
+Model performance: AIC = 63119.37773569395
+Used threshold (96-percentile): 19.017659221085815
+Precision: 17.431192660550458% (19/109).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU6 for sensor (1, 2):
+Model performance: AIC = 28585.854927263095
+Used threshold (96-percentile): 0.03427177554383818
+Precision: 0.0% (0/54).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_PU7 for sensor (5, 6):
+Model performance: AIC = 73514.75746342457
+Used threshold (96-percentile): 37.99023779570152
+Precision: 12.925170068027212% (19/147).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU8 for sensor (6, 5):
+Model performance: AIC = 66589.57603864257
+Used threshold (96-percentile): 22.236521642478206
+Precision: 15.107913669064748% (21/139).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU10 for sensor (4, 5):
+Model performance: AIC = 65917.53775714341
+Used threshold (96-percentile): 23.09069571672938
+Precision: 15.270935960591133% (31/203).
+Identified attacks: {8, 9, 10, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU11 for sensor (0, 1):
+Model performance: AIC = 7079.514595597204
+Used threshold (96-percentile): 0.005473913004865145
+Precision: 0.0% (0/97).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_V2 for sensor (7, 6):
+Model performance: AIC = 77905.68138735935
+Used threshold (96-percentile): 57.80946669294191
+Precision: 20.930232558139537% (18/86).
+Identified attacks: {8, 9, 10, 11, 13, 14}
+
+Generating and evaluating ARMA model of order P_J280 for sensor (7, 7):
+Model performance: AIC = -78870.98496242735
+Used threshold (96-percentile): 0.00521266607033519
+Precision: 16.875% (54/320).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J269 for sensor (7, 6):
+Model performance: AIC = 40411.01308753596
+Used threshold (96-percentile): 5.823638043843541
+Precision: 24.096385542168676% (20/83).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J300 for sensor (4, 6):
+Model performance: AIC = 31467.665911501295
+Used threshold (96-percentile): 3.06900603818225
+Precision: 18.04281345565749% (59/327).
+Identified attacks: {8, 9, 10, 12, 13}
+
+Generating and evaluating ARMA model of order P_J256 for sensor (7, 7):
+Model performance: AIC = 50285.35384538233
+Used threshold (96-percentile): 9.352367170391084
+Precision: 43.30708661417323% (55/127).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J289 for sensor (7, 7):
+Model performance: AIC = 31473.343983911396
+Used threshold (96-percentile): 3.0964359167113917
+Precision: 18.69918699186992% (69/369).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order P_J415 for sensor (7, 7):
+Model performance: AIC = 59207.211159791696
+Used threshold (96-percentile): 17.597041199811574
+Precision: 32.22222222222222% (29/90).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J302 for sensor (7, 6):
+Model performance: AIC = 44563.12859184672
+Used threshold (96-percentile): 6.629272405036281
+Precision: 40.5940594059406% (41/101).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J306 for sensor (5, 7):
+Model performance: AIC = 57111.21100354387
+Used threshold (96-percentile): 12.77555654652443
+Precision: 15.555555555555555% (21/135).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J307 for sensor (7, 6):
+Model performance: AIC = 44688.812368328254
+Used threshold (96-percentile): 6.679753715339775
+Precision: 30.120481927710845% (25/83).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J317 for sensor (7, 4):
+Model performance: AIC = 52235.39952149622
+Used threshold (96-percentile): 9.782665650234442
+Precision: 12.32876712328767% (18/146).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order P_J14 for sensor (7, 6):
+Model performance: AIC = 40794.59488141292
+Used threshold (96-percentile): 7.1216789722801375
+Precision: 21.176470588235293% (18/85).
+Identified attacks: {8, 9, 10, 11, 13, 14}
+
+Generating and evaluating ARMA model of order P_J422 for sensor (5, 7):
+Model performance: AIC = 30717.203970890823
+Used threshold (96-percentile): 2.977764575131644
+Precision: 18.421052631578945% (56/304).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+All identified attacks by ARMA in this dataset with threshold 96: {8, 9, 10, 11, 12, 13, 14}
+Threshold of 97 percent (of absolute residuals):
+
+Generating and evaluating ARMA model of order L_T1 for sensor (7, 5):
+Model performance: AIC = -13649.29592566039
+Used threshold (97-percentile): 0.2609256478606751
+Precision: 14.772727272727273% (13/88).
+Identified attacks: {8, 10, 12, 13}
+
+Generating and evaluating ARMA model of order L_T2 for sensor (4, 6):
+Model performance: AIC = -1895.4959046989898
+Used threshold (97-percentile): 0.5155489132142813
+Precision: 26.76056338028169% (19/71).
+Identified attacks: {8, 9, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T3 for sensor (7, 7):
+Model performance: AIC = -9375.915544908556
+Used threshold (97-percentile): 0.32072598226511484
+Precision: 27.27272727272727% (18/66).
+Identified attacks: {8, 9, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T4 for sensor (3, 7):
+Model performance: AIC = 7886.873356320462
+Used threshold (97-percentile): 0.8227314940159736
+Precision: 26.72413793103448% (31/116).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T5 for sensor (6, 7):
+Model performance: AIC = -829.1282689760119
+Used threshold (97-percentile): 0.47129726454817666
+Precision: 12.162162162162163% (9/74).
+Identified attacks: {8, 9, 10, 12}
+
+Generating and evaluating ARMA model of order L_T6 for sensor (6, 5):
+Model performance: AIC = -12828.443875078872
+Used threshold (97-percentile): 0.286149187374126
+Precision: 15.942028985507244% (11/69).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T7 for sensor (4, 7):
+Model performance: AIC = 13983.570768549054
+Used threshold (97-percentile): 1.1729982778563157
+Precision: 21.12676056338028% (15/71).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU1 for sensor (7, 6):
+Model performance: AIC = 50828.50995193154
+Used threshold (97-percentile): 17.77930567213758
+Precision: 39.77272727272727% (35/88).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU2 for sensor (4, 6):
+Model performance: AIC = 75135.71891938259
+Used threshold (97-percentile): 79.25707746067611
+Precision: 20.754716981132077% (11/53).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU4 for sensor (5, 7):
+Model performance: AIC = 63119.37773569395
+Used threshold (97-percentile): 20.71426727794594
+Precision: 21.176470588235293% (18/85).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU6 for sensor (1, 2):
+Model performance: AIC = 28585.854927263095
+Used threshold (97-percentile): 0.03427177554383818
+Precision: 0.0% (0/54).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_PU7 for sensor (5, 6):
+Model performance: AIC = 73514.75746342457
+Used threshold (97-percentile): 40.71532641961935
+Precision: 13.953488372093023% (18/129).
+Identified attacks: {8, 9, 10, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU8 for sensor (6, 5):
+Model performance: AIC = 66589.57603864257
+Used threshold (97-percentile): 23.210007519007412
+Precision: 14.40677966101695% (17/118).
+Identified attacks: {8, 9, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU10 for sensor (4, 5):
+Model performance: AIC = 65917.53775714341
+Used threshold (97-percentile): 24.744656025295214
+Precision: 10.843373493975903% (18/166).
+Identified attacks: {8, 9, 10, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU11 for sensor (0, 1):
+Model performance: AIC = 7079.514595597204
+Used threshold (97-percentile): 0.005473913036361291
+Precision: 0.0% (0/67).
+Identified attacks: set()
+
+Generating and evaluating ARMA model of order F_V2 for sensor (7, 6):
+Model performance: AIC = 77905.68138735935
+Used threshold (97-percentile): 62.543660241112725
+Precision: 18.75% (12/64).
+Identified attacks: {8, 9, 10, 11, 13}
+
+Generating and evaluating ARMA model of order P_J280 for sensor (7, 7):
+Model performance: AIC = -78870.98496242735
+Used threshold (97-percentile): 0.011476354254277302
+Precision: 17.431192660550458% (19/109).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J269 for sensor (7, 6):
+Model performance: AIC = 40411.01308753596
+Used threshold (97-percentile): 9.842885954153584
+Precision: 23.4375% (15/64).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J300 for sensor (4, 6):
+Model performance: AIC = 31467.665911501295
+Used threshold (97-percentile): 3.2450816272127336
+Precision: 17.16171617161716% (52/303).
+Identified attacks: {8, 9, 10, 12, 13}
+
+Generating and evaluating ARMA model of order P_J256 for sensor (7, 7):
+Model performance: AIC = 50285.35384538233
+Used threshold (97-percentile): 10.200699597676387
+Precision: 47.95918367346938% (47/98).
+Identified attacks: {8, 9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J289 for sensor (7, 7):
+Model performance: AIC = 31473.343983911396
+Used threshold (97-percentile): 3.2657849793236577
+Precision: 19.230769230769234% (65/338).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order P_J415 for sensor (7, 7):
+Model performance: AIC = 59207.211159791696
+Used threshold (97-percentile): 18.71291302028488
+Precision: 39.130434782608695% (27/69).
+Identified attacks: {8, 9, 10, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order P_J302 for sensor (7, 6):
+Model performance: AIC = 44563.12859184672
+Used threshold (97-percentile): 6.93403653142251
+Precision: 46.75324675324675% (36/77).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order P_J306 for sensor (5, 7):
+Model performance: AIC = 57111.21100354387
+Used threshold (97-percentile): 13.349146503004677
+Precision: 13.91304347826087% (16/115).
+Identified attacks: {8, 9, 12, 13}
+
+Generating and evaluating ARMA model of order P_J307 for sensor (7, 6):
+Model performance: AIC = 44688.812368328254
+Used threshold (97-percentile): 6.98583594530657
+Precision: 32.20338983050847% (19/59).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order P_J317 for sensor (7, 4):
+Model performance: AIC = 52235.39952149622
+Used threshold (97-percentile): 10.311277741170318
+Precision: 11.11111111111111% (14/126).
+Identified attacks: {8, 9, 10, 12, 13}
+
+Generating and evaluating ARMA model of order P_J14 for sensor (7, 6):
+Model performance: AIC = 40794.59488141292
+Used threshold (97-percentile): 7.6844665949302176
+Precision: 19.35483870967742% (12/62).
+Identified attacks: {8, 9, 10, 11, 13, 14}
+
+Generating and evaluating ARMA model of order P_J422 for sensor (5, 7):
+Model performance: AIC = 30717.203970890823
+Used threshold (97-percentile): 3.169644015906237
+Precision: 17.647058823529413% (48/272).
+Identified attacks: {8, 9, 10, 13}
+
+All identified attacks by ARMA in this dataset with threshold 97: {8, 9, 10, 11, 12, 13, 14}
+Threshold of 98 percent (of absolute residuals):
+
+Generating and evaluating ARMA model of order L_T1 for sensor (7, 5):
+Model performance: AIC = -13649.29592566039
+Used threshold (98-percentile): 0.2894554807143409
+Precision: 11.267605633802818% (8/71).
+Identified attacks: {8, 12, 13}
+
+Generating and evaluating ARMA model of order L_T2 for sensor (4, 6):
+Model performance: AIC = -1895.4959046989898
+Used threshold (98-percentile): 0.5658962674744976
+Precision: 29.629629629629626% (16/54).
+Identified attacks: {8, 9, 12, 13}
+
+Generating and evaluating ARMA model of order L_T3 for sensor (7, 7):
+Model performance: AIC = -9375.915544908556
+Used threshold (98-percentile): 0.34050554018823304
+Precision: 32.0% (16/50).
+Identified attacks: {8, 9, 12, 13, 14}
+
+Generating and evaluating ARMA model of order L_T4 for sensor (3, 7):
+Model performance: AIC = 7886.873356320462
+Used threshold (98-percentile): 0.9074517528794548
+Precision: 25.352112676056336% (18/71).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T5 for sensor (6, 7):
+Model performance: AIC = -829.1282689760119
+Used threshold (98-percentile): 0.5012903769240957
+Precision: 14.000000000000002% (7/50).
+Identified attacks: {8, 9, 10, 12}
+
+Generating and evaluating ARMA model of order L_T6 for sensor (6, 5):
+Model performance: AIC = -12828.443875078872
+Used threshold (98-percentile): 0.30522957938168105
+Precision: 18.867924528301888% (10/53).
+Identified attacks: {8, 9, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order L_T7 for sensor (4, 7):
+Model performance: AIC = 13983.570768549054
+Used threshold (98-percentile): 1.298008864961594
+Precision: 19.047619047619047% (8/42).
+Identified attacks: {8, 9, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU1 for sensor (7, 6):
+Model performance: AIC = 50828.50995193154
+Used threshold (98-percentile): 18.43709684315684
+Precision: 44.11764705882353% (30/68).
+Identified attacks: {8, 10, 11, 12, 13}
+
+Generating and evaluating ARMA model of order F_PU2 for sensor (4, 6):
+Model performance: AIC = 75135.71891938259
+Used threshold (98-percentile): 81.61144504473741
+Precision: 21.875% (7/32).
+Identified attacks: {9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU4 for sensor (5, 7):
+Model performance: AIC = 63119.37773569395
+Used threshold (98-percentile): 23.553229540348838
+Precision: 12.962962962962962% (7/54).
+Identified attacks: {9, 11, 12, 13, 14}
+
+Generating and evaluating ARMA model of order F_PU6 for sensor (1, 2):
+Model performance: AIC = 28585.854927263095
+Used threshold (98-percentile): 0.03427177558490885
+Precision: 0.0% (0/34).
+Identified attacks: set()
